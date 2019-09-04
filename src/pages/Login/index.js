@@ -12,7 +12,7 @@ class Login extends Component {
 
         this.state = {
             username: '',
-            senha: '',
+            senha: ''
             
         }
 
@@ -23,7 +23,7 @@ class Login extends Component {
 
     logar(e) {
         if (this.state.username !== '' && this.state.senha !== '') {
-                Routes(true);
+              Routes(this.props);
         } else {
             alert('oops, campo vazio')
         }
@@ -52,6 +52,7 @@ class Login extends Component {
                     
                     <input onChange={this.digitarSenha} type="password" name="senha" value={this.state.senha} /><br />
                     <a className='botao' onClick={this.logar}>ENTRAR</a>
+                    
                     
                 </form>
 

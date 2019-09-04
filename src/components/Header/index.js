@@ -17,7 +17,7 @@ class Header extends Component {
         <Link to="/">
         Filmaria
         </Link>
-        
+        <img src={require("D:/Google Drive/Intcode/filmes/src/assets/logout.PNG")} className="img"/>
         <h4  className="logOut">
           Log Out
         </h4>
