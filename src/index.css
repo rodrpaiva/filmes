@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #DDD;
+  background-image: url("D:/Google Drive/Intcode/filmes/src/assets/bg.png");
+  background-repeat: round;
 }
 
 code {

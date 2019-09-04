@@ -10,7 +10,7 @@ import { autenticado } from './auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route{...rest} render={props => (
-        autenticado() ? (
+        props.auth ? (
             <Component {...props} />
         ) : (
                 <Redirect to={{ pathname: "/", state: { from: props.location } }} />
@@ -18,7 +18,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 );
 
-const Routes = () => {
+const Routes = (auth) => {
 
 
 
@@ -28,14 +28,14 @@ const Routes = () => {
             <Header />
             <Switch>
 
-            {!autenticado() ? (<Route exact path="/" component={Login} />
+            {!auth ? (<Route exact path="/" component={Login} />
             ):(
                 <Route exact path="/" component={Painel} />
             )}
 
            
             
-                <PrivateRoute exact path="/painel" component={Painel} />
+                <PrivateRoute exact path="/painel" component={Painel} auth={auth} />
                 <Route exact path="/filme/:id" component={Filme} />
 
                 <Route path="*" component={Erro} />
