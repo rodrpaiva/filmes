@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './home.css';
+import './painel.css';
 import { Link } from 'react-router-dom';
 import Login from '../Login';
 
 
-class Home extends Component {
+class Painel extends Component {
 
     constructor(props) {
         super(props);
@@ -54,4 +54,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Painel;
