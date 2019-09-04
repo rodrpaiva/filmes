@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './login.css';
-import Auth, { autenticado } from 'D:/Google Drive/Intcode/filmes/src/auth';
+
 import Routes from '../../routes';
 
 
@@ -23,10 +23,7 @@ class Login extends Component {
 
     logar(e) {
         if (this.state.username !== '' && this.state.senha !== '') {
-
-            let auth = true;
-            Routes(auth);
-           
+                Routes(true);
         } else {
             alert('oops, campo vazio')
         }

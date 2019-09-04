@@ -5,7 +5,7 @@ import Erro from './pages/Erro';
 import Header from './components/Header';
 import Filme from './pages/Filme';
 import Login from './pages/Login';
-import { autenticado } from './auth';
+
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -19,6 +19,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 const Routes = (auth) => {
+   
 
 
 
