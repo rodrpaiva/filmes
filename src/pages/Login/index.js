@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './login.css';
-import { autenticado } from '..../auth';
+import { autenticado } from 'D:/Google Drive/Intcode/filmes/src/auth';
+
 
 
 
@@ -45,12 +46,12 @@ class Login extends Component {
 
     render() {
         return (
-            <div >
+            <div className='container'>
                 <form className='login'>
-
-                    <a>USERNAME</a><br />
+                    <img src={require("D:/Google Drive/Intcode/filmes/src/assets/icon.png")}/>
+                    <h1>Sign In</h1><br/>
                     <input onChange={this.digitarUser} type="text" name="user" value={this.state.username} /><br />
-                    <a>SENHA</a><br />
+                    
                     <input onChange={this.digitarSenha} type="password" name="senha" value={this.state.senha} /><br />
                     <a className='botao' onClick={this.logar}>ENTRAR</a>
                     
