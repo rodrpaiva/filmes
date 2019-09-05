@@ -7,6 +7,19 @@ import Routes from '../../routes';
 
 
 class Header extends Component {
+  constructor(props){
+    super(props);
+
+    this.logOut = this.logOut.bind(this); 
+   }
+
+
+
+  logOut(){
+
+    return(<div>{Routes(false)}</div>);
+    
+  }
   render() {
     let username;
     let senha;
@@ -17,13 +30,18 @@ class Header extends Component {
         <Link to="/">
         Filmaria
         </Link>
-        <img src={require("D:/Google Drive/Intcode/filmes/src/assets/logout.PNG")} className="img"/>
-        <h4  className="logOut">
+        <img alt="logOut" onClick={this.logOut} src={require("D:/Google Drive/Intcode/filmes/src/assets/logout.PNG")} className="img"/>
+        <h4 onClick={this.logOut} className="logOut">
           Log Out
         </h4>
+        
       </div>
     );
   }
 }
 
 export default Header;
+
+export const criarBotaoLogOut = () => {
+  
+}

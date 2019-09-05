@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './login.css';
 
 import Routes from '../../routes';
+import App from '../../App';
+import Painel from '../Painel';
+import Teste from '../../Teste';
 
 
 
@@ -21,15 +24,16 @@ class Login extends Component {
         this.digitarSenha = this.digitarSenha.bind(this);
     }
 
-    logar(e) {
+    logar() {
         if (this.state.username !== '' && this.state.senha !== '') {
-              Routes(this.props);
+          return(<div>{Routes(true)}</div>);
         } else {
             alert('oops, campo vazio')
         }
 
     }
-    
+
+     
 
     digitarUser(e) {
 
@@ -45,13 +49,16 @@ class Login extends Component {
     render() {
         return (
             <div className='container'>
+                
                 <form className='login'>
                     <img src={require("D:/Google Drive/Intcode/filmes/src/assets/icon.png")}/>
                     <h1>Sign In</h1><br/>
                     <input onChange={this.digitarUser} type="text" name="user" value={this.state.username} /><br />
                     
                     <input onChange={this.digitarSenha} type="password" name="senha" value={this.state.senha} /><br />
+                    
                     <a className='botao' onClick={this.logar}>ENTRAR</a>
+                    
                     
                     
                 </form>

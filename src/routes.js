@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Painel from './pages/Painel';
 import Erro from './pages/Erro';
@@ -18,16 +18,22 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 );
 
+const verifyAuth = (auth) => {
+	if(auth) {
+        alert("verificado!")
+		return (<Route exact path="/" component={Painel} />);
+	} else {
+		return (<Route exact path="/" component={Login} />);
+	}
+}
+
 const Routes = (auth) => {
  return (
         <BrowserRouter>
             <Header />
             <Switch>
-
-            {!auth ? (<Route exact path="/" component={Login} />
-            ):(
-                <Route exact path="/" component={Painel} />
-            )}
+            
+             {verifyAuth(auth)}
 
            
             

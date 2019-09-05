@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './painel.css';
 import { Link } from 'react-router-dom';
 import Login from '../Login';
+import {criarBotaoLogOut} from 'D:/Google Drive/Intcode/filmes/src/components/Header';
 
 
 class Painel extends Component {
@@ -16,6 +17,7 @@ class Painel extends Component {
 
     componentDidMount() {
         this.loadFilmes();
+        //criarBotaoLogOut();
     }
 
     loadFilmes() {
